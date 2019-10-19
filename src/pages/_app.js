@@ -6,6 +6,7 @@ import Router from "next/router";
 import Head from "next/head";
 
 // Components
+import Header from '../components/Header'
 
 Router.events.on("routeChangeStart", url => {
   console.log(`Loading: ${url}`);
@@ -23,23 +24,7 @@ export default class MyApp extends App {
           {/* Import CSS for nprogress */}
           <link rel="stylesheet" type="text/css" href="/nprogress.css" />
         </Head>
-        <nav>
-          <style jsx>{`
-            a {
-              margin: 0 10px 0 0;
-            }
-          `}</style>
-          <Link href="/">
-            <a>Home</a>
-          </Link>
-          <Link href="/intro">
-            <a>Intro</a>
-          </Link>
-          <Link href="/shows">
-            <a>Shows</a>
-          </Link>
-          <a href="/non-existing">Non Existing Page</a>
-        </nav>
+        <Header />
         <Component {...pageProps} />
       </>
     );
