@@ -23,6 +23,12 @@ export default class MyApp extends App {
         <Head>
           {/* Import CSS for nprogress */}
           <link rel="stylesheet" type="text/css" href="/nprogress.css" />
+          <meta
+            key="viewport"
+            name="viewport"
+            content="initial-scale=1.0, width=device-width"
+          />
+          <title>Boilerplate Front</title>
         </Head>
         <Header />
         <Component {...pageProps} />
