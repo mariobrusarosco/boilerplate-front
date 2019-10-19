@@ -6,7 +6,7 @@ import Router from "next/router";
 import Head from "next/head";
 
 // Components
-import Header from '../components/Header'
+import Header from 'components/Header'
 
 Router.events.on("routeChangeStart", url => {
   console.log(`Loading: ${url}`);

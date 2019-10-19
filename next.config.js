@@ -27,12 +27,12 @@ module.exports = {
     }
     return config
   },
-  // webpack(config, options) {
-  //   config.resolve.modules = [
-  //     path.resolve('src'),
-  //     path.resolve('node_modules'),
-  //   ]
+  webpack(config, options) {
+    config.resolve.modules = [
+      path.resolve('src'),
+      path.resolve('node_modules'),
+    ]
 
-  //   return config
-  // }
+    return config
+  }
 }
