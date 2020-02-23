@@ -1,12 +1,14 @@
 {
   "name": "parcel-ts",
-  "version": "1.0.0",
+  "version": "0.0.2",
   "main": "index.js",
   "license": "MIT",
   "scripts": {
     "dev": "parcel src/index.html"
   },
   "devDependencies": {
+    "@types/faker": "^4.1.9",
+    "faker": "^4.1.0",
     "typescript": "^3.8.2"
   }
 }
