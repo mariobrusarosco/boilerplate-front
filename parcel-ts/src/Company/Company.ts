@@ -14,5 +14,6 @@ export class Company {
     this.location = {
       lat: +faker.address.latitude(),
       lng: +faker.address.longitude()
+    };
   }
 }

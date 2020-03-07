@@ -85115,8 +85115,8 @@ function () {
   function User() {
     this.name = faker_1.default.name.firstName();
     this.location = {
-      lat: +faker_1.default.address.latitude(),
-      lng: +faker_1.default.address.longitude()
+      lat: parseFloat(faker_1.default.address.latitude()),
+      lng: parseFloat(faker_1.default.address.longitude())
     };
   }
 
@@ -85187,9 +85187,18 @@ var User_1 = require("./User");
 var Company_1 = require("./Company");
 
 var user = new User_1.User();
-console.log(user);
+console.log(user.location);
 var company = new Company_1.Company();
 console.log(company);
+new google.maps.Map(document.getElementById("map"), {
+  zoom: 1,
+  center: {
+    lat: 0,
+    lng: 0 // lat: user.location.lat,
+    // lng: user.location.lng
+
+  }
+});
 },{"./User":"User/index.ts","./Company":"Company/index.ts"}],"../../../../../../home/mario/.config/yarn/global/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -85218,7 +85227,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "37087" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "41905" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

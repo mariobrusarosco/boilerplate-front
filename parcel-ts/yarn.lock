@@ -7,6 +7,18 @@
   resolved "https://registry.yarnpkg.com/@types/faker/-/faker-4.1.9.tgz#5539f331eb66fc40f06ad307e52ed83f2a3fe1bb"
   integrity sha512-4ZFqA3CEXB6MgT8sDV8E5LhW+O9ndONsHeQXMbEwfOsjoQ4UXKqTJKru+BjDBUfobYEpQz1WYF9/uzQsvbY2wA==
 
+"@types/google-maps@^3.2.2":
+  version "3.2.2"
+  resolved "https://registry.yarnpkg.com/@types/google-maps/-/google-maps-3.2.2.tgz#aa97b0880be787d7fb04662707e36125c2e6e2d8"
+  integrity sha512-/XPVfS28VzUdE/HlmBRoe5ii1nNMyWujyRfRY08bD/JgmPlWSiY8enB2dqTe9mlc3kULq7LfFa1wcupM+lQfqA==
+  dependencies:
+    "@types/googlemaps" "*"
+
+"@types/googlemaps@*", "@types/googlemaps@^3.39.3":
+  version "3.39.3"
+  resolved "https://registry.yarnpkg.com/@types/googlemaps/-/googlemaps-3.39.3.tgz#8664e424f335802c8aa46a94676666b0a0f31d97"
+  integrity sha512-L8O9HAVFZj0TuiS8h5ORthiMsrrhjxTC8XUusp5k47oXCst4VTm+qWKvrAvmYMybZVokbp4Udco1mNwJrTNZPQ==
+
 faker@^4.1.0:
   version "4.1.0"
   resolved "https://registry.yarnpkg.com/faker/-/faker-4.1.0.tgz#1e45bbbecc6774b3c195fad2835109c6d748cc3f"
