@@ -1,1 +1,1 @@
-console.log("Starting Application with TS!");
+console.log("Starting Application with TS!!");

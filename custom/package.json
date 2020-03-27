@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "license": "MIT",
   "scripts": {
-    "dev": "webpack-dev-server --config webpack.config.babel.js"
+    "dev": "webpack-dev-server --config ./webpack/configuration/development.configuration.babel.js"
   },
   "devDependencies": {
     "@babel/core": "^7.8.7",
