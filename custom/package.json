@@ -3,12 +3,14 @@
   "version": "0.0.1",
   "license": "MIT",
   "scripts": {
-    "dev": "webpack-dev-server --config ./webpack/configuration/development.configuration.babel.js"
+    "dev": "webpack-dev-server --config ./webpack/configuration/development.configuration.babel.js",
+    "production": "webpack --config ./webpack/configuration/production.configuration.babel.js"
   },
   "devDependencies": {
     "@babel/core": "^7.8.7",
     "@babel/node": "^7.8.7",
     "@babel/preset-env": "^7.8.7",
+    "clean-webpack-plugin": "^3.0.0",
     "html-webpack-plugin": "^3.2.0",
     "ts-loader": "^6.2.1",
     "typescript": "^3.8.3",

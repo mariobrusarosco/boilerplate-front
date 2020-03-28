@@ -1,10 +1,11 @@
 import { resolve } from "path";
 
-import commonConfigurtion from "../configuration/common.configuration.babel";
+import commonConfiguration from "../configuration/common.configuration.babel";
 import commonPlugins from "../plugins/common.plugins.babel";
 import commonLoaders from "../loaders/common.loaders.babel";
 
-const developmentConfig = env => ({
+const developmentConfiguration = () => ({
+  ...commonConfiguration,
   mode: "development",
   devtool: "source-map",
   output: {
@@ -17,11 +18,10 @@ const developmentConfig = env => ({
     historyApiFallback: true,
     contentBase: "dist"
   },
-  ...commonConfigurtion,
   module: {
     rules: [...commonLoaders]
   },
   plugins: [...commonPlugins]
 });
 
-export default developmentConfig;
+export default developmentConfiguration;
