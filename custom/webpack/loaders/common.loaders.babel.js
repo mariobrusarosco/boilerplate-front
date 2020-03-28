@@ -1,6 +1,6 @@
 const commonLoaders = [
   {
-    test: /\.tsx?$/,
+    test: /\.ts(x)?$/,
     use: "ts-loader",
     exclude: /node_modules/
   }
