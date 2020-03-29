@@ -4,7 +4,7 @@
   "license": "MIT",
   "scripts": {
     "development": "export NODE_ENV=development && yarn create-app-config-file && webpack-dev-server --config ./webpack/configuration/development.configuration.babel.js",
-    "production": "export NODE_ENV=production && yarn create-app-config-file && webpack --config ./webpack/configuration/production.configuration.babel.js",
+    "production": "export NODE_ENV=production && webpack --config ./webpack/configuration/production.configuration.babel.js",
     "serve-production": "live-server --entry-file=dist/index.html --port=5000",
     "create-app-config-file": "babel-node scripts/create-app-config-file.js"
   },
