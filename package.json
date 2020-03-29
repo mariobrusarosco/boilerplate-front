@@ -25,7 +25,6 @@
     "webpack-dev-server": "^3.10.3"
   },
   "dependencies": {
-    "babel-node": "^0.0.1-security",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "styled-components": "^5.0.1",
