@@ -6,7 +6,8 @@ const productionPlugins = [
   new CleanWebpackPlugin(),
   new BundleAnalyzerPlugin({
     reportFilename: "../reports/bundle.html",
-    analyzerMode: "static"
+    analyzerMode: "static",
+    openAnalyzer: false
   }),
   new CompressionPlugin({
     algorithm: "gzip"
