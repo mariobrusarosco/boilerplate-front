@@ -1,5 +1,7 @@
 const localConfiguration = {
-  AccessControlAllowOrigin: 'http://localhost:8080'
-}
+  API: {
+    ROOT: "http://local-front-boilerplate/"
+  }
+};
 
-module.exports = localConfiguration
+module.exports = localConfiguration;
