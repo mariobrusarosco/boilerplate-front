@@ -12,7 +12,14 @@ jobs:
       - node/with-cache:
           steps:
             - run: yarn production
+  aws-cli-example:
+    executor: aws-cli/default
+    steps:
+      - checkout
+      - run: echo "Run your code here"
+
 workflows:
   build:
     jobs:
       - build
+      - aws-cli-example
