@@ -3,8 +3,8 @@
   "version": "0.0.1",
   "license": "MIT",
   "scripts": {
-    "development": "export NODE_ENV=development && yarn create-app-config-file && webpack-dev-server --config ./webpack/configuration/development.configuration.babel.js",
-    "production": "export NODE_ENV=production && yarn create-app-config-file && webpack --config ./webpack/configuration/production.configuration.babel.js",
+    "dev": "export NODE_ENV=development && yarn create-app-config-file && webpack-dev-server --config ./webpack/configuration/development.configuration.babel.js",
+    "prod": "export NODE_ENV=production && yarn create-app-config-file && webpack --config ./webpack/configuration/production.configuration.babel.js",
     "serve-production": "live-server --entry-file=dist/index.html --port=5000",
     "create-app-config-file": "babel-node scripts/create-app-config-file.js"
   },
@@ -19,6 +19,7 @@
     "compression-webpack-plugin": "^3.1.0",
     "html-webpack-plugin": "^3.2.0",
     "live-server": "^1.2.1",
+    "react-hot-loader": "^4.12.20",
     "ts-loader": "^6.2.1",
     "typescript": "^3.8.3",
     "webpack-bundle-analyzer": "^3.6.1",
@@ -26,7 +27,7 @@
   },
   "dependencies": {
     "react": "^16.13.1",
-    "react-dom": "^16.13.1",
+    "react-dom": "npm:@hot-loader/react-dom",
     "styled-components": "^5.0.1",
     "webpack": "^4.42.0",
     "webpack-cli": "^3.3.11"
