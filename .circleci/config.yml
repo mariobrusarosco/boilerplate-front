@@ -1,44 +1,117 @@
 version: 2.1
-# orbs:
-#   node: circleci/node@1.1.6
-#   aws-cli: circleci/aws-cli@1.0.0
 
-jobs:
-  one:
-    docker:
-      - image: circleci/node:10
-    steps:
-      - checkout
-      - run: echo "job 1"
-      - run: mkdir -p my_folder_test
-
-  two:
-    docker:
-      - image: circleci/node:10
-    steps:
-      - checkout
-      - run: echo "job 2"
-      - run: echo "ls"
-      - run: ls
 workflows:
-  version: 2
-  one_two:
+  build_and_test:
     jobs:
-      - one
-      - two
-  # build:
-  #   executor:
-  #     name: node/default
-  #   steps:
-  #     - checkout
-  #     - node/with-cache:
-  #         steps:
-  #           - run: yarn production
+      - build
+      - test:
+          requires:
+            - build
+jobs:
+  test:
+    docker:
+      - image: circleci/node:10
+    steps:
+      - attach_workspace:
+          at: /tmp/
+      - run: cd /tmp && ls
+      - run:
+          name: "Checking my current directory"
+          command: echo $PWD
+      - run:
+          name: "Checking the content of my current directory"
+          command: ls
+      - run:
+          name: "Test my Application"
+          command: yarn test
+  build:
+    docker:
+      - image: circleci/node:10
+    steps:
+      - run:
+          name: "Checking my current directory"
+          command: echo $PWD
+      - run:
+          name: "Checking the content of my current directory"
+          command: ls
+      - checkout
+      - run:
+          name: "After a copying my repo files...Checking the content of my current directory"
+          command: ls
+      - persist_to_workspace:
+          root: ~/
+          paths: "*"
+      # - restore_cache:
+      #     keys:
+      #       - dependency-cache-{{ checksum "yarn.lock" }}
+      # - run:
+      #     name: Installation via Yarn
+      #     command: yarn
+      # - save_cache:
+      #     key: dependency-cache-{{ checksum "yarn.lock" }}
+      #     paths:
+      #       - ./node_modules
+      # - run:
+      #     name: Build the Application
+      #     command: yarn build:production
   # deploy:
-  #   executor: aws-cli/default
+  #   docker:
+  #     - image: circleci/node:10
   #   steps:
   #     - checkout
   #     - run: ls
+  #     - attach_workspace:
+  #         at: /tmp/
+  #     - run: cd /tmp && ls
+  # - persist_to_workspace:
+  # Must be an absolute path, or relative path from working_directory
+  # root: src
+  # Must be relative path from root
+  # paths:
+  # - "*"
+  # - checkout
+  # - run: echo "job 1"
+  # - run: mkdir -p workspace
+  # - run: echo "Hello, world!" > workspace/echo-output
+  # - run: ls
+  # - run: yarn
+  # # -
+  # - persist_to_workspace:
+  #     # Must be an absolute path, or relative path from working_directory
+  #     root: workspace
+  #     # Must be relative path from root
+  #     paths:
+  #       - echo-output
+  # two:
+  # executor: my-executor
+  # docker:
+  # - image: circleci/node:10
+  # steps:
+  # - attach_workspace:
+  # Must be absolute path or relative path from working_directory
+  # at: /tmp/
+  # - run: mkdir -p /temp/workspace/my_folder_test_two
+  # - run: cd /tmp && ls
+# workflows:
+#   deploy:
+#     jobs:
+#       - build
+# - two:
+#     requires:
+#       - one
+# build:
+#   executor:
+#     name: node/default
+#   steps:
+#     - checkout
+#     - node/with-cache:
+#         steps:
+#           - run: yarn production
+# deploy:
+#   executor: aws-cli/default
+#   steps:
+#     - checkout
+#     - run: ls
 # workflows:
 # build-and-deploy:
 #   jobs:
@@ -46,3 +119,18 @@ workflows:
 #     - deploy:
 #         requires:
 #           - build
+
+### Built-in features
+
+# Circle CI will give you control of a machine's terminal. You'll be able to run terminal commands by yourself. You can use these commands to install what you'll need. But, if you want, you can use pre-configurated steps that will do that for you, like installing Node Js. You can do that inside your Jobs!
+# Now, to use node js, without having to install it:
+
+# ```yml
+# version: 2.1
+
+# ```yml
+# jobs:
+#   one:
+#     docker:
+#       - image: circleci/node:10
+# ```
