@@ -6,6 +6,7 @@ const App: React.FC = () => {
 
   const [counter, setCounter] = useState(0);
 
+  const decrement = () => setCounter(counter - 1);
   const increment = () => setCounter(counter + 1);
 
   return (
@@ -16,6 +17,7 @@ const App: React.FC = () => {
         <p>
           Counter: <span>{counter}</span>
         </p>
+        <button onClick={decrement}>decrement</button>
         <button onClick={increment}>increment</button>
       </div>
     </main>
