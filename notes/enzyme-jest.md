@@ -4,6 +4,7 @@
 
 ```bash
   yarn add jest -D
+
 ```
 
 ### With Typescript
@@ -12,12 +13,17 @@
   yarn add ts-jest @types/jest
 ```
 
-If you're using typescript you'll get some error when using global jest methods like test().
-
-To avoid that, add:
-
 ```bash
-  yarn add @types/jest -D
+  ts-jest init
+```
+
+This command will generate this file:
+
+```js
+module.exports = {
+  preset: "ts-jest",
+  testEnvironment: "node",
+};
 ```
 
 ## Setup Enzyme
@@ -30,6 +36,12 @@ Add three depenencies: enzyme jest-enzyme enzyme-adapter-react-\*
   yarn add enzyme jest-enzyme enzyme-adapter-react-16 -D
 ```
 
+### With Typescript
+
+```bash
+  yarn add @types/enzyme @types/enzyme-adapter-react-16 -D
+```
+
 import React from 'react'
 import Enzyme, { shallow } from 'enzyme'
 import EnzymeAdapter from 'enzyme-adapter-react-16'
@@ -37,3 +49,32 @@ import EnzymeAdapter from 'enzyme-adapter-react-16'
 Enzyme.configure({
 adapter: new EnzymeAdapter()
 })
+
+## Use Webpack Global Variables
+
+If you provide global variable for all your modules, via Webpack you need to declare
+them inside the `jest.config.js` file and pass its content all over again.
+
+your `webpack` config file:
+
+```js
+new webpack.DefinePlugin({
+  APPLICATION: JSON.stringify({
+    name: "to-do-list",
+    version: "1.0.0",
+  }),
+});
+```
+
+```js
+globals: {
+  APPLICATION: {
+    name: "to-do-list",
+    version: "1.0.0",
+  },
+},
+```
+
+### Proving React as Global variable also on Jest
+
+globalThis.React = require("react");
