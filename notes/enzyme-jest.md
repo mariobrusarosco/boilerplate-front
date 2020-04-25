@@ -75,6 +75,12 @@ globals: {
 },
 ```
 
-### Proving React as Global variable also on Jest
+### Providing React as Global variable also on Jest
 
 globalThis.React = require("react");
+
+### Removing data attributes for Production
+
+babel-plugin-react-remove-properties
+
+## State
