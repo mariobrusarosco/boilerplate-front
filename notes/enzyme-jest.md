@@ -84,3 +84,37 @@ globalThis.React = require("react");
 babel-plugin-react-remove-properties
 
 ## State
+
+### Set a state
+
+```js
+const wrapper = shallow(<AppAsClass {...props} />);
+
+wrapper.setState({ counter: 0 });
+```
+
+### Access the state
+
+```js
+const wrapper = shallow(<AppAsClass {...props} />);
+
+wrapper.setState({ counter: 0 });
+```
+
+## Events
+
+### Click Event
+
+```js
+const button = ...;
+
+button.simulate('click')
+```
+
+## Get a text content of a ShallowWrapper
+
+```js
+const button = wrapper.find('[data-testid="button"]');
+
+expect(button.text()).toContain("click here");
+```

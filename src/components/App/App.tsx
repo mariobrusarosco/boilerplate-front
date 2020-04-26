@@ -25,28 +25,49 @@ const App: React.FC = () => {
 };
 
 export class AppAsClass extends React.Component {
+  state: {
+    counter: number;
+  };
+
   constructor(props: any) {
     super(props);
-    console.log("App Component", APPLICATION);
+
+    this.state = {
+      counter: 0,
+    };
+
+    this.increment = this.increment.bind(this);
+    this.decrement = this.decrement.bind(this);
   }
 
-  // const [counter, setCounter] = useState(0);
+  decrement() {
+    this.setState({
+      counter: this.state.counter - 1,
+    });
+  }
 
-  // const decrement = () => setCounter(counter - 1);
-  // const increment = () => setCounter(counter + 1);
+  increment() {
+    this.setState({
+      counter: this.state.counter + 1,
+    });
+  }
 
   render() {
     return (
       <main data-testid="app">
         <h1>App Component</h1>
 
-        {/* <div data-testid="counter-wrapper">
-          <p>
-            Counter: <span>{counter}</span>
+        <div data-testid="counter-wrapper">
+          <p data-testid="counter-display">
+            Counter: <span>{this.state.counter}</span>
           </p>
-          <button onClick={decrement}>decrement</button>
-          <button onClick={increment}>increment</button>
-        </div> */}
+          <button data-testid="decrement-button" onClick={this.decrement}>
+            decrement
+          </button>
+          <button data-testid="increment-button" onClick={this.increment}>
+            increment
+          </button>
+        </div>
       </main>
     );
   }
