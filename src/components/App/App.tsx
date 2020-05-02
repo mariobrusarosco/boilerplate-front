@@ -1,5 +1,6 @@
 import { hot } from "react-hot-loader/root";
 import { useState } from "react";
+import Congrats from "../Congrats";
 
 const App: React.FC = () => {
   console.log("App Component", APPLICATION);
@@ -68,6 +69,8 @@ export class AppAsClass extends React.Component {
             increment
           </button>
         </div>
+
+        <Congrats success={true} />
       </main>
     );
   }

@@ -2,6 +2,7 @@ import * as React from "react";
 import Enzyme, { shallow, ShallowWrapper } from "enzyme";
 import EnzymeAdapter from "enzyme-adapter-react-16";
 import { AppAsClass } from "./App";
+import { findByTestAttr } from "../../specs/testUtils";
 
 Enzyme.configure({
   adapter: new EnzymeAdapter(),
@@ -20,19 +21,6 @@ const setup = (props = {}, state: any = null): ShallowWrapper => {
   if (state) wrapper.setState(state);
 
   return wrapper;
-};
-
-/**
- * @function findByTestAttr
- * @param {ShallowWrapper} wrapper
- * @param {string} val
- * @returns {ShallowWrapper}
- */
-const findByTestAttr = (
-  wrapper: ShallowWrapper,
-  val: string
-): ShallowWrapper => {
-  return wrapper.find(`[data-testid="${val}"]`);
 };
 
 test("renders without any error", () => {
