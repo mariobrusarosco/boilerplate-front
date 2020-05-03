@@ -1,15 +1,13 @@
-import PropTypes from "prop-types";
-
 /**
  * Functional Component
  *
  */
 
-interface Props {
+export interface CongratsProps {
   success: boolean;
 }
 
-const Congrats: React.FunctionComponent<Props> = (props) => {
+const Congrats: React.FunctionComponent<CongratsProps> = (props) => {
   if (props.success) {
     return (
       <section data-testid="component-congrats">

@@ -50,6 +50,10 @@ Enzyme.configure({
 adapter: new EnzymeAdapter()
 })
 
+### Create a Setup File
+
+I can create a setup file. The content of this file will be run before each test.
+
 ## Use Webpack Global Variables
 
 If you provide global variable for all your modules, via Webpack you need to declare
@@ -117,4 +121,71 @@ button.simulate('click')
 const button = wrapper.find('[data-testid="button"]');
 
 expect(button.text()).toContain("click here");
+```
+
+## PropTypes
+
+```bash
+yarn add prop-types -D
+```
+
+### Lib check-prop-types (does not work with .ts)
+
+```bash
+yarn add check-prop-types -D
+```
+
+Inside a test file
+
+```jsx
+import checkPropTypes from "check-prop-types";
+
+test("does not throw warning with expected props", () => {
+  const expectedProps = { test: false };
+
+  const propError = checkPropTypes(
+    MyComponent.propTypes,
+    expectedProps,
+    "prop",
+    MyComponent.name
+  );
+
+  expect(propError).toBeUndefined();
+});
+```
+
+An example of Util
+
+```jsx
+import checkPropTypes from "check-prop-types";
+
+export const checkProps = (component, conformingProps) => {
+  const propError = checkPropTypes(
+    MyComponent.propTypes,
+    expectedProps,
+    "prop",
+    MyComponent.name
+  );
+
+  expect(propError).toBeUndefined();
+};
+```
+
+## Testing with default props
+
+```jsx
+export const setup = (
+  props: CongratsProps,
+  state: any = null
+): ShallowWrapper => {
+  const defaultProps = { name: 'Mario'};
+  const setupProps = {...defaultProps, ...props}
+
+  const wrapper = shallow(<Congrats {...setupProps} />);
+
+  if (state) wrapper.setState(state);
+
+  return wrapper;
+}
+};
 ```
