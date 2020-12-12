@@ -1,0 +1,1 @@
+{"ast":null,"code":"import { jsx as _jsx } from \"react/jsx-runtime\";\n\nconst SignUp = () => /*#__PURE__*/_jsx(\"div\", {\n  children: \"Sign up\"\n});\n\nexport default SignUp;","map":null,"metadata":{},"sourceType":"module"}
