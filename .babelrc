@@ -1,9 +1,6 @@
 {
 	"presets": [
-    [
-      "next/babel",
-      "@babel/preset-typescript"
-    ]
-	],
-	"plugins": []
+    "next/babel",
+    "@babel/preset-typescript"
+  ]
 }

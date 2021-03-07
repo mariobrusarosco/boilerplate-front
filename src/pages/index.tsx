@@ -1,6 +1,6 @@
-import Head from 'next/head'
+import Head from 'next/head';
 
-const foo = 'bar'
+const foo = 'bar';
 
 export default function Home() {
   return (
@@ -16,5 +16,5 @@ export default function Home() {
         </h1>
       </main>
     </div>
-  )
+  );
 }

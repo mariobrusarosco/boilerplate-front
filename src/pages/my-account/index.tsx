@@ -1,7 +1,7 @@
-import Head from 'next/head'
+import Head from 'next/head';
 
 const MyAccount = () => {
-  return <main>my account</main>
-}
+  return <main>my account</main>;
+};
 
-export default MyAccount
+export default MyAccount;
