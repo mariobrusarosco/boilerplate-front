@@ -1,7 +1,9 @@
 import { AppProps } from 'next/app';
 import Head from 'next/head';
 import React from 'react';
+import { ThemeProvider } from 'styled-components';
 import AppStyles from 'styles/AppStyles';
+import { mainTheme } from 'styles/themes/main-theme';
 
 const NextApp = ({ Component, pageProps }: AppProps) => {
   return (
@@ -18,7 +20,9 @@ const NextApp = ({ Component, pageProps }: AppProps) => {
 
       <AppStyles />
 
-      <Component {...pageProps} />
+      <ThemeProvider theme={mainTheme}>
+        <Component {...pageProps} />
+      </ThemeProvider>
     </>
   );
 };
