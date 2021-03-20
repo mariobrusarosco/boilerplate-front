@@ -1,21 +1,20 @@
-import Head from 'next/head';
-import styled from 'styled-components';
+import dynamic from 'next/dynamic';
+// import Map from 'components/Map';
 
-const foo = 'bar';
+const MapClientSide = dynamic(() => import('components/Map'), { ssr: true });
 
 export default function Home() {
+  // console.warn(MapClientSide);
   return (
-    <div>
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <main>
-        <h1>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-      </main>
-    </div>
+    <main
+      className="test"
+      data-testid="home-page-wrapper"
+      style={{
+        height: '100vh',
+        width: '100vw'
+      }}
+    >
+      <MapClientSide data-test="test" />
+    </main>
   );
 }
