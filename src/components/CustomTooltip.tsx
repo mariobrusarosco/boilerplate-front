@@ -1,4 +1,4 @@
-export const CustomTooltip = props => {
+export const CustomTooltip = (props: any) => {
   console.log({ props });
 
   return (

@@ -1,5 +1,5 @@
-import * as numeral from 'numeral';
-import * as moment from 'moment';
+import numeral from 'numeral';
+import moment from 'moment';
 
 export const allGrantsNetValue = 11000450.45;
 
@@ -202,7 +202,7 @@ export const variationSharesOptions = {
     //   year: '%b %Y%Y%Y'
     // },
     labels: {
-      formatter: payload => {
+      formatter: (payload: any) => {
         console.log(payload);
 
         return moment(payload.value).format('MMM YY');
@@ -243,7 +243,7 @@ export const variationSharesOptions = {
         y: -22
       },
       labels: {
-        formatter: payload => {
+        formatter: (payload: any) => {
           console.log(payload);
 
           return new Intl.NumberFormat('us-en').format(+payload.value);
@@ -261,7 +261,7 @@ export const variationSharesOptions = {
       },
       opposite: true,
       labels: {
-        formatter: payload => {
+        formatter: (payload: any) => {
           console.log(payload);
 
           return numeral(payload.value).format('0a');
