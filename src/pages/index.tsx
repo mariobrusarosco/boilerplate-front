@@ -1,13 +1,12 @@
 import dynamic from 'next/dynamic';
 // import Map from 'components/Map';
 
-const MapClientSide = dynamic(() => import('components/Map'), { ssr: true });
+const MapClientSide = dynamic(() => import('components/Map'), { ssr: false });
 
 export default function Home() {
-  // console.warn(MapClientSide);
   return (
     <main
-      className="test"
+      className="Home"
       data-testid="home-page-wrapper"
       style={{
         height: '100vh',

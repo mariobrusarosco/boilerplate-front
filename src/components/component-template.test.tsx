@@ -1,14 +1,14 @@
 import { screen, render } from '@testing-library/react';
 
-import Main from './main';
+import ComponentTemplate from 'components/component-template';
 
-describe('<Main />', () => {
+describe('<ComponentTemplate />', () => {
   it('should render the heading', () => {
-    render(<Main />);
+    render(<ComponentTemplate />);
 
     expect(
       screen.getByRole('heading', {
-        name: /main component/
+        name: /component template/
       })
     ).toBeInTheDocument();
   });

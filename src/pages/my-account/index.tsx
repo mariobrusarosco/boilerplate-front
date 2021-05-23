@@ -1,7 +1,5 @@
-import Head from 'next/head';
-
 const MyAccount = () => {
-  return <main>my account</main>;
+  return <section>my account</section>;
 };
 
 export default MyAccount;
