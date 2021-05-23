@@ -1,0 +1,10 @@
+query getPages {
+  pages {
+    id
+    slug
+    heading
+    body {
+      html
+    }
+  }
+}
