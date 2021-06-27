@@ -1,21 +1,15 @@
-import { CounterConsumer } from "../../contexts/CounterContext";
+import { useContext } from "react";
+import { CounterContext } from "../../contexts/CounterContext";
 
 const Counter: React.FC = () => {
-  return (
-    <CounterConsumer>
-      {(counter) => {
-        const { state, increment } = counter;
+  const counter = useContext(CounterContext);
+  const { state, increment } = counter;
 
-        return (
-          <>
-            <p>
-              Counter: <span>{state.counter}</span>
-            </p>
-            <button onClick={increment}>increment</button>
-          </>
-        );
-      }}
-    </CounterConsumer>
+  return (
+    <>
+      <p>Counter: {state.counter}</p>
+      <button onClick={increment}>increment</button>
+    </>
   );
 };
 

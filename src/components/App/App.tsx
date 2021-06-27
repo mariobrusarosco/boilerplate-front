@@ -11,11 +11,11 @@ const App: React.FC = () => {
     <main>
       <h1>App Component</h1>
 
-      <CounterProvider>
-        <UserProvider>
-          <UserConsumer>{(user) => user && <User />}</UserConsumer>
-        </UserProvider>
+      <UserProvider>
+        <UserConsumer>{(user) => user && <User />}</UserConsumer>
+      </UserProvider>
 
+      <CounterProvider>
         <Counter />
       </CounterProvider>
     </main>

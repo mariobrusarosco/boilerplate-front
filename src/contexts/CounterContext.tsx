@@ -7,8 +7,8 @@ export interface CounterContextProps {
 
 const initialState = 0;
 
-const { Provider, Consumer: CounterConsumer } =
-  createContext<CounterContextProps | any>(undefined);
+const CounterContext = createContext<CounterContextProps | any>(undefined);
+const { Provider, Consumer: CounterConsumer } = CounterContext;
 
 const CounterProvider: React.FC = ({ children }) => {
   const [counter, setCounter] = useState(initialState);
@@ -27,4 +27,4 @@ const CounterProvider: React.FC = ({ children }) => {
   );
 };
 
-export { CounterProvider, CounterConsumer };
+export { CounterProvider, CounterConsumer, CounterContext };
