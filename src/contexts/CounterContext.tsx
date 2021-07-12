@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useContext, useState } from "react";
 
 export interface CounterContextProps {
   counter: number;
@@ -7,7 +7,7 @@ export interface CounterContextProps {
 
 const initialState = 0;
 
-const CounterContext = createContext<CounterContextProps | any>(undefined);
+const CounterContext = createContext<CounterContextProps | undefined>(undefined);
 const { Provider, Consumer: CounterConsumer } = CounterContext;
 
 const CounterProvider: React.FC = ({ children }) => {
@@ -18,7 +18,7 @@ const CounterProvider: React.FC = ({ children }) => {
   return (
     <Provider
       value={{
-        state: { counter },
+        counter,
         increment,
       }}
     >
@@ -27,4 +27,14 @@ const CounterProvider: React.FC = ({ children }) => {
   );
 };
 
-export { CounterProvider, CounterConsumer, CounterContext };
+const useCount = () => {
+  const context = useContext(CounterContext)
+
+  if(context == undefined) {
+    throw Error('useCount must be used within CounterContext')
+  }
+
+  return context
+}
+
+export { useCount, CounterProvider, CounterConsumer, CounterContext };

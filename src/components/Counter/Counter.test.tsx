@@ -1,6 +1,6 @@
 import React from "react";
-import { render, fireEvent } from "@testing-library/react";
-import { CounterProvider, CounterContext } from "../../contexts/CounterContext";
+import { render } from "@testing-library/react";
+import {  CounterConsumer, CounterContext } from "../../contexts/CounterContext";
 import Counter from "./Counter";
 
 describe("Components | Counter", () => {
@@ -8,7 +8,8 @@ describe("Components | Counter", () => {
     const { getByText } = render(
       <CounterContext.Provider
         value={{
-          state: { counter: 4 },
+          counter: 4,
+          increment: jest.fn()
         }}
       >
         <Counter />

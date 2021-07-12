@@ -1,7 +1,12 @@
 import React from "react";
-import { UserConsumer } from "../../contexts/userContext";
+import { useCount } from "../../contexts/CounterContext";
+import { UserConsumer } from "../../contexts/UserContext";
 
-const User: React.FC = () => (
+const User: React.FC = () => {
+
+useCount();
+
+return (
   <UserConsumer>
     {(user) => {
       const { state, setUser } = user;
@@ -25,6 +30,7 @@ const User: React.FC = () => (
       );
     }}
   </UserConsumer>
-);
+)
+  }
 
 export default User;

@@ -1,8 +1,9 @@
+import * as React from "react";
 import { hot } from "react-hot-loader/root";
-import { UserProvider, UserConsumer } from "../../contexts/userContext";
 import { CounterProvider } from "../../contexts/CounterContext";
 import User from "../User/User";
 import Counter from "../Counter/Counter";
+import { UserConsumer, UserProvider } from "../../contexts/UserContext";
 
 const App: React.FC = () => {
   console.log("App Component", APPLICATION);
@@ -11,12 +12,14 @@ const App: React.FC = () => {
     <main>
       <h1>App Component</h1>
 
-      <UserProvider>
-        <UserConsumer>{(user) => user && <User />}</UserConsumer>
-      </UserProvider>
 
       <CounterProvider>
         <Counter />
+
+        <UserProvider>
+          <UserConsumer>{(user) => user && <User />}</UserConsumer>
+        </UserProvider>
+
       </CounterProvider>
     </main>
   );
