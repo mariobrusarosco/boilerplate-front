@@ -23,8 +23,9 @@ jobs:
         uses: actions/checkout@v2
         
       - name: Run upate script
-        run: git update-index --chmod=+x ./scripts/demo.sh
-        run: ./scripts/demo.sh
+        run: | 
+          git update-index --chmod=+x ./scripts/demo.sh
+          ./scripts/demo.sh
         shell: bash
   # This workflow contains a single job called "build"
   build:
