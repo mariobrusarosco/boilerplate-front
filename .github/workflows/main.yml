@@ -39,7 +39,7 @@ jobs:
           echo $MY_CUSTOM_ENV.
           
   save-my-artifact:
-    name: Save output
+    name: Save my artifact
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -58,6 +58,7 @@ jobs:
           
   restore-my-artifact:
     runs-on: ubuntu-latest
+    name: Restore my artifact
     steps:          
       - name: Download a single artifact
         uses: actions/download-artifact@v2
