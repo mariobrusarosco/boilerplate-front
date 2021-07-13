@@ -40,6 +40,7 @@ jobs:
           
   example-job:
     name: Save output
+    runs-on: ubuntu-latest
     steps:
       - shell: bash
         run: |
