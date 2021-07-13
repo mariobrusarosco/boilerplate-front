@@ -38,36 +38,28 @@ jobs:
           echo Add other actions to build,
           echo $MY_CUSTOM_ENV.
           
-  example-job:
+  save-my-artifact:
     name: Save output
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v2
       - shell: bash
         run: |
           expr 1 + 1 > output.log
-          
       - name: Upload output file
         uses: actions/upload-artifact@v2
         with:
-          name: output-log-file
+          name: my-content
           path: output.log
+      - name: Display folder content
+        run: ls
           
+  restore-my-artifact:
+    runs-on: ubuntu-latest
+    steps:          
       - name: Download a single artifact
         uses: actions/download-artifact@v2
         with:
           name: output-log-file
       - name: Display folder content
         run: ls
-          
-#   example-job:
-#     runs-on: ubuntu-latest
-#     permissions: read-all
-#     steps:
-#       - name: Checkout repo
-#         uses: actions/checkout@v2
-        
-#       - name: Run upate script
-#         run: | 
-#           git update-index --chmod=+x ./scripts/demo.sh
-#           ./scripts/demo.sh
-#         shell: bash
