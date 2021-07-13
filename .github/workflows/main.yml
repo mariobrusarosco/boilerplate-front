@@ -50,6 +50,14 @@ jobs:
         with:
           name: output-log-file
           path: output.log
+          
+      - name: Download a single artifact
+        uses: actions/download-artifact@v2
+        with:
+          name: output-log-file
+        - shell: bash
+          run: ls
+          
 #   example-job:
 #     runs-on: ubuntu-latest
 #     permissions: read-all
