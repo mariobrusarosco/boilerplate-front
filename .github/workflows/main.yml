@@ -77,13 +77,13 @@ jobs:
       - name: Display folder content
         run: ls
 
-  restore-my-artifact:
-    runs-on: ubuntu-latest
-    name: Restore my artifact
-    steps:
-      - name: Download a single artifact
-        uses: actions/download-artifact@v2
-        with:
-          name: my-content
-      - name: Display folder content
-        run: ls
+  # restore-my-artifact:
+  #   runs-on: ubuntu-latest
+  #   name: Restore my artifact
+  #   steps:
+  #     - name: Download a single artifact
+  #       uses: actions/download-artifact@v2
+  #       with:
+  #         name: my-content
+  #     - name: Display folder content
+  #       run: ls
