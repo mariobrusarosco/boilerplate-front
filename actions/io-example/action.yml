@@ -2,6 +2,9 @@ name: "IO Example"
 description: "Just an action that will handle inputs and outputs"
 author: "mariobrusarosco@gmail.com"
 
+runs:
+  using: "node"
+
 inputs:
   FOLDER_NAME:
     description: "Folder name using hífens to separate words"
