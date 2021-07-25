@@ -29,6 +29,14 @@ jobs:
         run: |
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
+
+  IO-example:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: IO example action
+      - uses: ./actions/io-example
+
   # This workflow contains a single job called "build"
   build:
     # The type of runner that the job will run on
