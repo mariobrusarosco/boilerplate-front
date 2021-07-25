@@ -1,0 +1,10 @@
+name: "IO Example"
+description: "Just an action that will handle inputs and outputs"
+author: "mariobrusarosco@gmail.com"
+
+inputs:
+  FOLDER_NAME:
+    description: "Folder name using hífens to separate words"
+    required: true
+    default: "dist"
+
