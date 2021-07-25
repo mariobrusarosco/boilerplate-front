@@ -34,7 +34,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: ./actions/io-example
+      # - uses: ./actions/io-example
 
   # This workflow contains a single job called "build"
   build:
