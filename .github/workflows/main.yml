@@ -32,10 +32,10 @@ jobs:
 
   IO-example:
     runs-on: ubuntu-latest
-
     steps:
       - name: IO example action
-      - uses: ./actions/io-example
+      - run: echo "start"
+      # - uses: ./actions/io-example
 
   # This workflow contains a single job called "build"
   build:
