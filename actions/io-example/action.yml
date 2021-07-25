@@ -3,7 +3,7 @@ description: "Just an action that will handle inputs and outputs"
 author: "mariobrusarosco@gmail.com"
 
 runs:
-  using: "node"
+  using: "node12"
 
 inputs:
   FOLDER_NAME:
