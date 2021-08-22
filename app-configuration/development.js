@@ -1,6 +1,6 @@
 const devConfiguration = {
   API: {
-    ROOT: "http://dev-front-boilerplate/"
+    ROOT: "http://some-end-point"
   }
 };
 

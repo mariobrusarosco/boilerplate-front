@@ -1,6 +1,6 @@
 const localConfiguration = {
   API: {
-    ROOT: "http://local-front-boilerplate/"
+    ROOT: "http://some-end-point"
   }
 };
 

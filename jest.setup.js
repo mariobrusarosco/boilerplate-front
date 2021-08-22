@@ -1,1 +1,1 @@
-globalThis.React = require("react");
+

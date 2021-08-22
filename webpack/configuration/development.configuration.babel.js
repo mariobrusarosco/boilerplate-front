@@ -4,6 +4,8 @@ import commonConfiguration from "../configuration/common.configuration.babel";
 import commonPlugins from "../plugins/common.plugins.babel";
 import commonLoaders from "../loaders/common.loaders.babel";
 
+import developmentLoaders from "../loaders/development.loaders.babel";
+
 const developmentConfiguration = () => ({
   ...commonConfiguration,
   mode: "development",
@@ -19,7 +21,7 @@ const developmentConfiguration = () => ({
     contentBase: "dist"
   },
   module: {
-    rules: [...commonLoaders]
+    rules: [...commonLoaders, ...developmentLoaders]
   },
   plugins: [...commonPlugins]
 });

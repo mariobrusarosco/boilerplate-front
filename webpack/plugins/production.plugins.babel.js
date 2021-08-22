@@ -10,11 +10,11 @@ const productionPlugins = [
     openAnalyzer: false
   }),
   new CompressionPlugin({
-    filename: "[path].gz[query]",
+    filename: "[name].gz[query]",
     algorithm: "gzip"
   }),
   new CompressionPlugin({
-    filename: "[path].br[query]",
+    filename: "[name].br[query]",
     algorithm: "brotliCompress",
     compressionOptions: { level: 11 }
   })

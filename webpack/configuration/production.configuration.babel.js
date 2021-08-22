@@ -6,10 +6,10 @@ import commonLoaders from "../loaders/common.loaders.babel";
 
 import productionPlugins from "../plugins/production.plugins.babel";
 
-const productionConfiguration = env => ({
+const productionConfiguration = () => ({
   ...commonConfiguration,
   mode: "production",
-  devtool: "false",
+  devtool: "hidden-nosources-source-map",
   output: {
     filename: "[name].[contenthash].bundle.js",
     chunkFilename: "[name].[contenthash].chunk.js",

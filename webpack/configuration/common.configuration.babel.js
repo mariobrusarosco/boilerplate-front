@@ -1,9 +1,9 @@
 import path from "path";
 
 const commonConfiguration = (() => ({
-  entry: ["./src/index.tsx"],
+  entry: ["./src/index.ts"],
   resolve: {
-    extensions: [".tsx", ".ts", ".js"],
+    extensions: [".ts", ".js"],
     modules: [path.resolve("node_modules"), path.resolve("src")]
   }
 }))();

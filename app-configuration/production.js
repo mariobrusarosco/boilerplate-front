@@ -1,6 +1,6 @@
 const productionConfiguration = {
   API: {
-    API_ROOT: "http://prod-front-boilerplate/"
+    ROOT: "http://some-end-point"
   }
 };
 

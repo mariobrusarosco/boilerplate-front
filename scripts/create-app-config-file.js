@@ -1,11 +1,6 @@
 import fs from "fs";
 import appConfiguration from "../app-configuration/index";
 
-console.log(
-  "--- [ CREATING PROJECT CONFIGURATION JSON ] ---",
-  appConfiguration
-);
-
 fs.writeFile(
   "./app-configuration.json",
   JSON.stringify(appConfiguration),
