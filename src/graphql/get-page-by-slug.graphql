@@ -1,9 +1,0 @@
-query getPageBySlug($slug: String!) {
-  page(where: { slug: $slug}) {
-   id,
-   heading,
-  body{
-    html
-   }
-  }
-}
